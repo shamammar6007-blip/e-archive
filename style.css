@@ -1,0 +1,263 @@
+/* استيراد خط عربي حديث ومناسب للأنظمة الإدارية */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', Tahoma, Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f4f8;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* تنسيق العنوان الرئيسي */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+/* بطاقة النموذج */
+main {
+  width: 100%;
+  max-width: 700px;
+}
+
+.archive-form {
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+/* توزيع الحقول باستخدام Grid */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* جعل الحقل الأول (اسم الكتاب) يأخذ العرض الكامل لتناسق الشكل */
+.form-group:first-child {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+/* تنسيق مجموعة الأزرار باستخدام Flexbox */
+.btn-group {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.btn-group button {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  min-width: 100px;
+}
+
+.btn-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+}
+
+.btn-group button:active {
+  transform: translateY(0);
+}
+
+/* ألوان الأزرار حسب الوظيفة */
+.add {
+  background-color: #16a34a; /* أخضر للإضافة */
+}
+
+.search {
+  background-color: #2563eb; /* أزرق للبحث */
+}
+
+.correction {
+  background-color: #d97706; /* برتقالي للتعديل */
+}
+
+.delete {
+  background-color: #dc2626; /* أحمر للحذف */
+}
+
+.display {
+  background-color: #475569; /* رمادي داكن للعرض */
+}
+
+/* التجاوب مع شاشات الهاتف */
+@media (max-width: 600px) {
+  .archive-form {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:first-child,
+  .btn-group {
+    grid-column: span 1;
+  }
+
+  .btn-group button {
+    flex: 1 1 45%;
+  }
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 30px;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Aref Ruqaa', serif; /* يمكنك تبديله بـ 'Reem Kufi' أو 'Amiri' */
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.5px;
+}
+
+/* تنسيق جدول عرض الكتب */
+.table-section {
+  background-color: #ffffff;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.table-section h2 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+}
+
+tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background-color: #eff6ff;
+}
+/* جعل حقل رفع الصورة يأخذ العرض الكامل ليحافظ على تناسق النموذج */
+.full-width {
+  grid-column: span 2;
+}
+
+/* تنسيق الصورة المصغرة داخل الجدول */
+.book-thumb {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.book-thumb:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 600px) {
+  .full-width {
+    grid-column: span 1;
+  }
+}

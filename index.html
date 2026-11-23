@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>الأرشفة الإلكترونية</title>
+</head>
+<body>
+
+  <header>
+    <h1>الأرشفة الإلكترونية</h1>
+  </header>
+
+  <main>
+    <section class="archive-form">
+      <form>
+        <div class="form-group">
+          <label for="book-name">اسم الكتاب</label>
+          <input type="text" id="book-name" name="book-name">
+        </div>
+
+        <div class="form-group">
+          <label for="book-number">رقم الكتاب</label>
+          <input type="text" id="book-number" name="book-number">
+        </div>
+
+        <div class="form-group">
+          <label for="book-type">نوع الكتاب</label>
+          <select id="book-type" name="book-type" required>
+            <option value="" disabled selected>اختر النوع...</option>
+            <option value="صادر">صادر</option>
+            <option value="وارد">وارد</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="File-number">رقم الاضبارة</label>
+          <input type="text" id="File-number" name="File-number">
+        </div>
+
+
+        <div class="form-group">
+          <label for="book-date">تاريخ الكتاب</label>
+          <input type="date" id="book-date" name="book-date">
+        </div>
+
+        <div class="form-group full-width">
+           <label for="book-image"> تحميل صورة الكتاب</label>
+           <input type="file" id="book-image" name="book-image" accept="image/*">
+        </div>
+        
+        <div class="btn-group">
+          <button type="button" class="search">بحث</button>
+          <button type="button" class="correction">تعديل</button>
+          <button type="button" class="delete">حذف</button>
+          <button type="submit" class="add">إضافة</button>
+          <button type="button" class="display">عرض</button>
+        </div>
+      </form>
+    </section>
+    <!-- أضف هذا القسم أسفل قسم النموذج مباشرة -->
+    <section class="table-section" id="table-section" style="display: none;">
+      <h2>سجل الكتب المؤرشفة</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>اسم الكتاب</th>
+              <th>رقم الكتاب</th>
+              <th>نوع الكتاب</th>
+              <th>رقم الاضبارة</th>
+              <th>تاريخ الكتاب</th>
+              <th>صورة الكتاب</th>
+            </tr>
+          </thead>
+          <tbody id="books-table-body">
+            <!-- ستظهر الكتب هنا تلقائياً -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+ <footer>
+    <p>المبرمج مهندس عمار علي التميمي</p>
+  </footer>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
